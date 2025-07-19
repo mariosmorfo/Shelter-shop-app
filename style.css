@@ -28,7 +28,7 @@ body {
 
 .nav-menu li {
   text-decoration: none;
-  color: #c2720ad3;
+  color: rgb(105, 16, 16);
   font-weight: semi-bold;  
 }
 
@@ -72,12 +72,6 @@ body {
   padding: 30px;
   text-align: center;
   height: 7vh;
-}
-
-.links a {
-  margin: 0 px;
-  text-decoration: none;
-  color: #c2720ad3;
 }
 
 
