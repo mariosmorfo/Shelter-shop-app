@@ -1,0 +1,84 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  color: rgb(105, 16, 16);
+}
+
+/* Header */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
+  background-color: #f3eded;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  display: flex;
+
+}
+
+.nav-menu ul {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+}
+
+.nav-menu li {
+  text-decoration: none;
+  color: #c2720ad3;
+  font-weight: semi-bold;  
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #c2720ad3;
+  font-weight: bold;
+}
+
+.btn {
+  padding: 12px 15px;
+  border: none;
+  border-radius: 25px;
+  margin: 0 3px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.primary {
+  background-color: #f39e58;
+  color: white;
+}
+
+.secondary {
+  background-color: transparent;
+  border: 2px solid #c2720ad3;
+  color:#c2720ad3;
+}
+
+/* Welcome Section */
+.welcome {
+  height: 70vh;
+  padding: 30px;
+  flex-direction: column;
+  background: url('img/background\ img.svg') center/cover no-repeat;
+}
+
+.footer {
+  justify-content: space-between;
+  background-color: #f3eded;
+  padding: 30px;
+  text-align: center;
+  height: 7vh;
+}
+
+.links a {
+  margin: 0 px;
+  text-decoration: none;
+  color: #c2720ad3;
+}
+
+
+
