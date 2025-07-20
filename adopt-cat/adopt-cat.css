@@ -1,14 +1,16 @@
+/* General Styles */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
   color: rgb(105, 16, 16);
 }
 
+/* Header */
 .main-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 50px;
+  padding: 10px 30px;
   background-color: #f3eded;
 }
 
@@ -37,12 +39,23 @@ body {
   font-weight: bold;
 }
 
+.nav-menu a:hover {
+  color: #f39e58;
+}
+
+/* Footer */
 .footer {
   justify-content: space-between;
   background-color: #f3eded;
-  padding: 30px;
+  padding: 20px;
   text-align: center;
-  height: 7vh;
+  height: 10vh;
+}
+
+.links a {
+  text-decoration: none;
+  color: #c2720ad3;
+  font-weight: semi-bold;
 }
 
 
