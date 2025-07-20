@@ -1,3 +1,24 @@
+@media (max-width: 768px) {
+  .welcome-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .welcome-text {
+    text-align: center;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .welcome-image img {
+    max-width: 100%;
+    margin-top: 20px;
+  }
+}
+/* General Styles */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
@@ -31,6 +52,11 @@ body {
   font-weight: bold;
 }
 
+.nav-menu a:hover {
+  color: #f39e58;
+}
+
+/* Welcome Section */
 .welcome {
   background-color: #fff7f5;
   width: 100%;
@@ -55,7 +81,7 @@ body {
 }
 
 /* Buttons */
-.hero-buttons {
+.welcome-buttons {
   display: flex;
   gap: 12px;
   margin-top: 10px;
@@ -81,4 +107,20 @@ body {
   max-width: 100%;
   display: block;
 }
+
+/* Footer */
+.footer {
+  justify-content: space-between;
+  background-color: #f3eded;
+  padding: 20px;
+  text-align: center;
+  height: 10vh;
+}
+
+.links a {
+  text-decoration: none;
+  color: #c2720ad3;
+  font-weight: semi-bold;
+}
+
 
