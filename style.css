@@ -18,6 +18,7 @@
     margin-top: 20px;
   }
 }
+
 /* General Styles */
 body {
   margin: 0;
@@ -64,21 +65,15 @@ body {
 
 .welcome-grid {
   display: grid;
-  grid-template-columns: 1fr 1.5fr;
+  grid-template-columns: 1fr 1.8fr;
   align-items: center;
   margin-right: 70px;
 }
 
 
 .welcome-text {
-  margin-left: 100px;
-  text-align: left;
+  margin-left: 70px;
 } 
-
-.welcome-text ul {
-  padding-left: 20px;
-  margin-bottom: 15px;
-}
 
 /* Buttons */
 .welcome-buttons {
