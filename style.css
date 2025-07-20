@@ -9,7 +9,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 50px;
+  padding: 10px 30px;
   background-color: #f3eded;
 }
 
@@ -17,7 +17,6 @@ body {
   width: 40px;
   height: 40px;
   display: flex;
-
 }
 
 .nav-menu ul {
@@ -26,25 +25,48 @@ body {
   gap: 1rem;
 }
 
-.nav-menu li {
-  text-decoration: none;
-  color: rgb(105, 16, 16);
-  font-weight: semi-bold;  
-}
-
 .nav-menu a {
   text-decoration: none;
   color: #c2720ad3;
   font-weight: bold;
 }
 
+.welcome {
+  background-color: #fff7f5;
+  width: 100%;
+}
+
+.welcome-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  align-items: center;
+  margin-right: 70px;
+}
+
+
+.welcome-text {
+  margin-left: 100px;
+  text-align: left;
+} 
+
+.welcome-text ul {
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+
+/* Buttons */
+.hero-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
 .btn {
-  padding: 12px 15px;
+  padding: 12px 20px;
   border: none;
   border-radius: 25px;
-  margin: 0 3px;
-  cursor: pointer;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .primary {
@@ -52,27 +74,11 @@ body {
   color: white;
 }
 
-.secondary {
-  background-color: transparent;
-  border: 2px solid #c2720ad3;
-  color:#c2720ad3;
+/* Image side */
+.welcome-image img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: block;
 }
-
-/* Welcome Section */
-.welcome {
-  height: 70vh;
-  padding: 30px;
-  flex-direction: column;
-  background: url('img/background\ img.svg') center/cover no-repeat;
-}
-
-.footer {
-  justify-content: space-between;
-  background-color: #f3eded;
-  padding: 30px;
-  text-align: center;
-  height: 7vh;
-}
-
-
 
