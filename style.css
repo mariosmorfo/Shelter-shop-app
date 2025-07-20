@@ -106,6 +106,8 @@ body {
   height: auto;
   max-width: 100%;
   display: block;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 /* Footer */
