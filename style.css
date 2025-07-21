@@ -65,7 +65,7 @@ body {
 
 .welcome-grid {
   display: grid;
-  grid-template-columns: 1fr 1.8fr;
+  grid-template-columns: 1fr 1.9fr;
   align-items: center;
   margin-right: 70px;
 }
