@@ -39,6 +39,7 @@ async function loadCats() {
       card.querySelector('.cat-origin').textContent = cat.origin;
       card.querySelector('.cat-temperament').textContent = cat.temperament;
       card.querySelector('.cat-life').textContent = cat.life_span;
+      card.querySelector('.child-friendly').textContent = cat.child_friendly;
 
       const button = card.querySelector('button');
       const message = card.querySelector('.message');
