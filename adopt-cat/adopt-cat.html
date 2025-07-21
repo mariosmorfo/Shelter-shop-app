@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Cats for Adoption</title>
+  <title>Shelter Gallery</title>
   <link rel="stylesheet" href="adopt-cat.css" />
 </head>
 <body>
@@ -13,11 +13,11 @@
       <ul>
         <li><a href="../index.html">Home</a></li>
         <li><a href="./adopt-cat.html">Adopt a Cat</a></li>
-        <li><a href="#">About</a></li>
+        <li><a href="../about/about.html">About us</a></li>
       </ul>
     </nav>
   </header>
-  <h1>Cats for adopt</h1>
+  <h2>Choose your next friend...</h2>
   <div id="cat-grid"></div>
   <template id="cat-template">
     <div class="card">
@@ -25,6 +25,7 @@
       <h3 class="cat-name"></h3>
       <div class="info"><strong>Origin:</strong> <span class="cat-origin"></span></div>
       <div class="info"><strong>Temperament:</strong> <span class="cat-temperament"></span></div>
+      <div class="info"><strong>Child-friendly:</strong> <span class="child-friendly"></span> / 5</div>
       <div class="info"><strong>Life Span:</strong> <span class="cat-life"></span> years</div>
       <button class="btn primary">Adopt Me</button>
       <div class="message"></div>
