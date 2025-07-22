@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shelter Gallery</title>
+  <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+  <header class="main-header">
+      <div class="logo"><img src="./img/logo.svg" alt=""></div>
+        <nav class="nav-menu">
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../adopt-cat/adopt.html">Adopt a Cat</a></li>
+            <li><a href="../about/about.html">About us</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+          </ul>
+        </nav>
+    </header>
+    <div class="formbold-main-wrapper">
+    <div class="formbold-form-wrapper">
+      <h1 class="formbold-form-title">Contact Us</h1>
+      <form id="myForm">
+          <div class="formbold-input-flex">
+            <div>
+                <input
+                type="text"
+                name="firstname"
+                id="firstname"
+                placeholder="Jane"
+                class="formbold-form-input"
+                />
+                <label for="firstname" class="formbold-form-label"> First name </label>
+            </div>
+            <div>
+                <input
+                type="text"
+                name="lastname"
+                id="lastname"
+                placeholder="Cooper"
+                class="formbold-form-input"
+                />
+                <label for="lastname" class="formbold-form-label"> Last name </label>
+            </div>
+          </div>
+
+          <div class="formbold-input-flex">
+            <div>
+                <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="jhon@mail.com"
+                class="formbold-form-input"
+                />
+                <label for="email" class="formbold-form-label"> Mail </label>
+            </div>
+            <div>
+                <input
+                type="text"
+                name="phone"
+                id="phone"
+                placeholder="(319) 555-0115"
+                class="formbold-form-input"
+                />
+                <label for="phone" class="formbold-form-label"> Phone </label>
+            </div>
+          </div>
+
+          <div class="formbold-textarea">
+              <textarea
+                  rows="6"
+                  name="message"
+                  id="message"
+                  placeholder="Write your message..."
+                  class="formbold-form-input"
+              ></textarea>
+              <label for="message" class="formbold-form-label"> Message </label>
+          </div>
+
+          <button class="formbold-btn">
+              Send Message
+          </button>
+          <div id="status-message" class="message"></div>
+      </form>
+    </div>
+  </div>
+    <footer class="footer">
+    <p>&copy; 2025 Shelter Foot Gallery. All rights reserved.</p>
+      <p class="nav-menu">Follow us on:
+        <a href="https://www.facebook.com/ninelivesgreece" target="_blank">Facebook</a> |
+        <a href="https://www.instagram.com/ninelivesgreece/" target="_blank">Instagram</a>
+      </p>
+  </footer> 
+  <script src="contact.js"></script>
+</body>
+</html>
