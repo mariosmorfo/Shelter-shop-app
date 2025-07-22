@@ -21,61 +21,75 @@ const apiUrl = 'https://api.thecatapi.com/v1/breeds';
 const imageBase = 'https://cdn2.thecatapi.com/images';
 const grid = document.getElementById('cat-grid');
 const template = document.getElementById('cat-template');
+const postUrl = 'https://echo.free.beeceptor.com/api/adopt';
 
+
+async function fetchCatData() {
+  const res = await fetch(apiUrl);
+  return await res.json();
+}
+
+function createCatCard(cat) {
+  const card = template.content.cloneNode(true);
+
+  const img = card.querySelector('.cat-img');
+  img.src = cat.reference_image_id
+    ? `${imageBase}/${cat.reference_image_id}.jpg`
+    : '../img/cat1.jpg';
+  img.onerror = () => (img.src = '../img/cat1.jpg');
+  img.alt = cat.name;
+
+  card.querySelector('.cat-name').textContent = cat.name;
+  card.querySelector('.cat-origin').textContent = cat.origin;
+  card.querySelector('.cat-temperament').textContent = cat.temperament;
+  card.querySelector('.cat-life').textContent = cat.life_span;
+
+  const button = card.querySelector('button');
+  const message = card.querySelector('.message');
+  setupAdoptButton(button, message, cat);
+
+  return card;
+}
+
+function setupAdoptButton(button, message, cat) {
+  button.addEventListener('click', () => {
+    const adoptedCat = {
+      name: cat.name,
+      origin: cat.origin,
+      temperament: cat.temperament,
+      life_span: cat.life_span,
+    };
+
+    const adopted = JSON.parse(localStorage.getItem('adoptedCats')) || [];
+    adopted.push(adoptedCat);
+    localStorage.setItem('adoptedCats', JSON.stringify(adopted));
+
+    fetch(postUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(adoptedCat)
+    })
+      .then(() => {
+        message.textContent = 'Adoption request sent!';
+        button.disabled = true;
+      })
+      .catch(() => {
+        message.textContent = 'Something went wrong.';
+      });
+  });
+}
 
 async function loadCats() {
   try {
-    const res = await fetch(apiUrl);
-    const cats = await res.json();
-
+    const cats = await fetchCatData();
     cats.forEach(cat => {
-      const card = template.content.cloneNode(true);
-
-      const img = card.querySelector('.cat-img');
-      const fallback = '../img/cat1.jpg';
-      img.src = cat.reference_image_id ?  `${imageBase}/${cat.reference_image_id}.jpg` : fallback;
-      img.onerror = () => img.src = fallback;
-      img.alt = cat.name;
-    
-      card.querySelector('.cat-name').textContent = cat.name;
-      card.querySelector('.cat-origin').textContent = cat.origin;
-      card.querySelector('.cat-temperament').textContent = cat.temperament;
-      card.querySelector('.cat-life').textContent = cat.life_span;
-      card.querySelector('.child-friendly').textContent = cat.child_friendly;
-
-      const button = card.querySelector('button');
-      const message = card.querySelector('.message');
-
-      button.addEventListener('click', () => {
-        const adoptedCat = {
-          name: cat.name,
-          origin: cat.origin,
-          temperament: cat.temperament,
-          life_span: cat.life_span      
-        };
-        let adopted = JSON.parse(localStorage.getItem('adoptedCats')) || [];
-        adopted.push(adoptedCat); 
-        localStorage.setItem('adoptedCats', JSON.stringify(adopted));
-
-        fetch('https://echo.free.beeceptor.com/api/adopt', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({adoptedCat})
-        })
-        .then(() => {
-          message.textContent = 'Adoption request sent!';
-          button.disabled = true;
-        })
-        .catch(() => {
-          message.textContent = 'Something went wrong.';
-        });
-      });
-    
+      const card = createCatCard(cat);
       grid.appendChild(card);
     });
   } catch (err) {
     console.error('Failed to load cats', err);
     grid.innerHTML = '<p>Error loading cats.</p>';
   }
-} 
+}
+
 
