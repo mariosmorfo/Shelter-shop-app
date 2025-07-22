@@ -103,6 +103,10 @@ body {
   color: white;
 }
 
+.btn:hover {
+  background-color: #c2720ad3;
+}
+
 /* Image side */
 .welcome-image img {
   width: 100%;
@@ -119,7 +123,7 @@ body {
   background-color: #f3eded;
   padding: 20px;
   text-align: center;
-  height: 10vh;
+  min-height: 50px;
 }
 
 .links a {
