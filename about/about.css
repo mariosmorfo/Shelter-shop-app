@@ -84,7 +84,7 @@ body {
   background-color: #f3eded;
   padding: 20px;
   text-align: center;
-  height: 10vh;
+  min-height: 50px;
 }
 
 .links a {
@@ -92,3 +92,4 @@ body {
   color: #c2720ad3;
   font-weight: semi-bold;
 }
+

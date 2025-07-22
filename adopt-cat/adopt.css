@@ -134,7 +134,7 @@ h2 {
   background-color: #f3eded;
   padding: 20px;
   text-align: center;
-  height: 10vh;
+  min-height: 50px;
 }
 
 .links a {
