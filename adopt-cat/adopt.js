@@ -32,7 +32,9 @@ async function loadCats() {
       const card = template.content.cloneNode(true);
 
       const img = card.querySelector('.cat-img');
-      img.src = `${imageBase}/${cat.reference_image_id}.jpg`;
+      const fallback = '../img/cat1.jpg';
+      img.src = cat.reference_image_id ?  `${imageBase}/${cat.reference_image_id}.jpg` : fallback;
+      img.onerror = () => img.src = fallback;
       img.alt = cat.name;
     
       card.querySelector('.cat-name').textContent = cat.name;
