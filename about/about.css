@@ -46,10 +46,10 @@ body {
 
 
 .main-section {
-  padding: auto;
-  margin: auto;
-  width: 70%;
-  padding: 7px;
+  width: 65%;
+  padding: 10px;
+  text-align: center;
+  margin: 0 auto;
   
 }
 
