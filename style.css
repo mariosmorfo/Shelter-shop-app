@@ -1,10 +1,29 @@
 @media (max-width: 768px) {
+  .main-header {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
   .welcome-grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
   }
 
+  .welcome-image {
+    display: none;
+  }
+
   .welcome-text {
+    width: 90%;
     text-align: center;
   }
 
@@ -14,12 +33,14 @@
   }
 
   .welcome-image img {
-    max-width: 100%;
-    margin-top: 20px;
+    width: 100%;
+    height: auto;
   }
 }
 
+
 /* General Styles */
+
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
@@ -27,6 +48,7 @@ body {
 }
 
 /* Header */
+
 .main-header {
   display: flex;
   justify-content: space-between;
@@ -58,6 +80,7 @@ body {
 }
 
 /* Welcome Section */
+
 .welcome {
   background-color: #fff7f5;
   width: 100%;
@@ -78,12 +101,12 @@ body {
   color: #333;
 }
 
-
 .welcome-text {
   margin-left: 70px;
 } 
 
 /* Buttons */
+
 .welcome-buttons {
   display: flex;
   gap: 12px;
@@ -108,6 +131,7 @@ body {
 }
 
 /* Image side */
+
 .welcome-image img {
   width: 100%;
   height: auto;
@@ -118,6 +142,7 @@ body {
 }
 
 /* Footer */
+
 .footer {
   justify-content: space-between;
   background-color: #f3eded;
