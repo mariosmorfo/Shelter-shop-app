@@ -1,3 +1,28 @@
+@media (max-width: 768px) {
+  .main-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .nav-menu ul {
+    display: flex;          
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 0;                                      
+    padding: 0;        
+  }
+
+  .formbold-main-wrapper {
+    padding: 24px;
+  }
+
+  .formbold-form-wrapper {
+    max-width: 100%;
+    padding: 0 16px;
+  }
+}
 
   /* General Styles */
 
