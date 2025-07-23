@@ -66,26 +66,33 @@ When building this app , I focused on:
 ##  Project Structure
 
 ├── index.html # Home page (Welcome section and nav buttons)
+
 ├── script.js # Home button click handlers
+
 ├── style.css # Global & home styles
 
 
 ├── adopt.html # “Adopt a Cat” page (gallery + template) 
+
 ├── adopt.css # Gallery page styles
+
 ├── adopt.js # Fetch & render cats; setup adoption buttons 
 
 
 ├── about.html # About page (mission, story, sponsors) 
+
 ├── about.css # About page styles
 
 
 ├── contact.html # Contact form page 
+
 ├── contact.css # Contact form styles
+
 └── contact.js # Form validation & localStorage logic 
 
 ##  Installation & Run
 
-1. **Clone**  
+ **Clone**  
    ```bash
    git clone git@github.com:mariosmorfo/QuadraWeb-project.git
    cd QuadraWeb-project
@@ -93,7 +100,7 @@ When building this app , I focused on:
    **Python**
    python -m http.server 8000
 
-   **VS Code Live Server
+   **VS Code Live Server**
    Install the Live Server extension by Ritwick Dey.
 
    Right-click any HTML file → Open with Live Server.
