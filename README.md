@@ -82,3 +82,18 @@ When building this app , I focused on:
 ├── contact.html # Contact form page 
 ├── contact.css # Contact form styles
 └── contact.js # Form validation & localStorage logic 
+
+##  Installation & Run
+
+1. **Clone**  
+   ```bash
+   git clone git@github.com:mariosmorfo/QuadraWeb-project.git
+   cd QuadraWeb-project
+
+   **Python**
+   python -m http.server 8000
+
+   **VS Code Live Server
+   Install the Live Server extension by Ritwick Dey.
+
+   Right-click any HTML file → Open with Live Server.
