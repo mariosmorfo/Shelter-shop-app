@@ -70,7 +70,7 @@ When building this app , I focused on:
 
   ├── script.js # Home button click handlers
 
-    ── style.css # Global & home styles
+  ├──style.css # Global & home styles
 
   ├── adopt.html # “Adopt a Cat” page (gallery + template) 
 
