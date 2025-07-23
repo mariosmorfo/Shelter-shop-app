@@ -86,10 +86,7 @@ When building this app , I focused on:
 
 ├── contact.html # Contact form page 
 
-  ├── about.css # About page styles
-
-
-├── contact.css # Contact form styles
+  ├── contact.css # Contact form styles
 
   ├── contact.js # Form validation & localStorage logic 
 
