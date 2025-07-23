@@ -1,6 +1,6 @@
 # Shelter Foot Gallery
 
-A multipage, responsive website for browsing and “adopting” cat breeds, plus a contact form—built entirely with JavaScript, HTML5, and CSS.
+A multipage, responsive website for browsing and “adopting” cat breeds, plus a contact form-built entirely with JavaScript, HTML5, and CSS.
 
 ---
 
