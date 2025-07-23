@@ -67,24 +67,30 @@ When building this app , I focused on:
 
 ├── index.html # Home page (Welcome section & nav buttons)
 |
-|
+
 ├── script.js # Home button click handlers
 |
+
 ├── style.css # Global & home styles
       
 ├── adopt.html # “Adopt a Cat” page (gallery)
 |
+
 ├── adopt.css # Gallery page styles
+
 |
 ├── adopt.js # Fetch & render cats; setup adoption buttons
 
 ├── about.html # About page (mission, story, sponsors)
+
 |
 ├── about.css # About page styles
 
 ├── contact.html # Contact form page
+
 |
 ├── contact.css # Contact form styles
+
 |
 └── contact.js # Form validation & localStorage logic
 
