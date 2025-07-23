@@ -4,7 +4,7 @@ A multipage, responsive website for browsing and “adopting” cat breeds, plus
 
 ---
 
-## 📝 My Approach
+## My Approach
 
 When building this app , I focused on:
 
@@ -33,7 +33,7 @@ When building this app , I focused on:
    - JS Doc‑style comments and clean file structure make the code easy to read, test, and extend.
 
 
-## 🚀 Features
+##  Features
 
 - **Dynamic Cat Gallery**  
   - Fetches breed data from [TheCatAPI](https://thecatapi.com) on page load  
@@ -45,14 +45,14 @@ When building this app , I focused on:
 - **Contact Form**  
   - Validates required fields (first name, last name, email, message) on submit  
   - Saves messages in `localStorage` and displays success/error feedback :contentReference  
-  
+
 - **Responsive Design**  
   - Mobile‑first layouts with CSS Grid and Flexbox  
   - Breakpoints at 768px to stack nav and resize images   
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - **Languages**: JavaScript (ES6+), HTML5, CSS3  
 - **APIs**:  
@@ -63,7 +63,7 @@ When building this app , I focused on:
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ├── index.html # Home page (Welcome section and nav buttons)
 ├── script.js # Home button click handlers
