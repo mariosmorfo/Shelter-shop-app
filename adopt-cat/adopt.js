@@ -13,16 +13,27 @@
  * - REST API (TheCatAPI, Beecceptor)
  */
 
-document.addEventListener('DOMContentLoaded', () => {
-  loadCats();
-});
-
 const apiUrl = 'https://api.thecatapi.com/v1/breeds';
 const imageBase = 'https://cdn2.thecatapi.com/images';
 const grid = document.getElementById('cat-grid');
 const template = document.getElementById('cat-template');
 const postUrl = 'https://echo.free.beeceptor.com/api/adopt';
+  
 
+document.addEventListener('DOMContentLoaded', onInit);
+
+async function onInit() {
+  try {
+    const cats = await fetchCatData();
+    cats.forEach(cat => {
+      const card = createCatCard(cat);
+      grid.appendChild(card);
+    });
+  } catch (err) {
+    console.error('Failed to load cats', err);
+    grid.innerHTML = '<p>Error loading cats.</p>';
+  }
+}
 
 async function fetchCatData() {
   const res = await fetch(apiUrl);
@@ -79,17 +90,5 @@ function setupAdoptButton(button, message, cat) {
   });
 }
 
-async function loadCats() {
-  try {
-    const cats = await fetchCatData();
-    cats.forEach(cat => {
-      const card = createCatCard(cat);
-      grid.appendChild(card);
-    });
-  } catch (err) {
-    console.error('Failed to load cats', err);
-    grid.innerHTML = '<p>Error loading cats.</p>';
-  }
-}
 
 
