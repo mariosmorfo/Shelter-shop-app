@@ -7,37 +7,66 @@
  * - **Local Storage**: Saves adopted cat data in the browser's localStorage to persist user actions across sessions.
  * - **Feedback Messaging**: Displays success or error messages in response to user actions.
  * - **Errors**: Handles data fetch failures gracefully with console logging and user-visible messages.
+ * - **Filtering Functionality**: Filters cat breeds based on user input for country of origin.
  * 
  * @technologies
  * - JavaScript (ES6+)
  * - REST API (TheCatAPI, Beecceptor)
  */
 
+import { filterCats } from './filter.js'; 
+
 const apiUrl = 'https://api.thecatapi.com/v1/breeds';
 const imageBase = 'https://cdn2.thecatapi.com/images';
 const grid = document.getElementById('cat-grid');
 const template = document.getElementById('cat-template');
 const postUrl = 'https://echo.free.beeceptor.com/api/adopt';
-  
+const originInput = document.getElementById('cat-origin');
+const filterBtn   = document.getElementById('filter-btn');
+const resetBtn    = document.getElementById('reset-btn');
 
+let allCats = [];
+  
 document.addEventListener('DOMContentLoaded', onInit);
 
 async function onInit() {
   try {
-    const cats = await fetchCatData();
-    cats.forEach(cat => {
-      const card = createCatCard(cat);
-      grid.appendChild(card);
-    });
+    allCats = await fetchCatData();
+    renderCats(allCats);
   } catch (err) {
     console.error('Failed to load cats', err);
     grid.innerHTML = '<p>Error loading cats.</p>';
   }
+
+  filterBtn.addEventListener('click', () => {
+  const query = originInput.value.trim();
+  
+  if (!query) {
+    alert('Please enter a country to filter by.');
+    return;      
+  }
+
+  const filtered = filterCats(allCats, query);
+  renderCats(filtered);
+});
+
+  resetBtn.addEventListener('click', () => {
+    originInput.value = '';      
+    renderCats(allCats);                
+  });
 }
 
 async function fetchCatData() {
   const res = await fetch(apiUrl);
   return await res.json();
+}
+
+function renderCats(cats) {
+  grid.innerHTML = '';
+  cats.forEach(cat => {
+    const card = createCatCard(cat);
+    grid.appendChild(card);
+  });
 }
 
 function createCatCard(cat) {
@@ -88,6 +117,7 @@ function setupAdoptButton(button, message, cat) {
         message.textContent = 'Something went wrong.';
       });
   });
+
 }
 
 
