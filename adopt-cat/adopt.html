@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Shelter Gallery</title>
   <link rel="stylesheet" href="adopt.css" />
+   <script type="module" src="adopt.js"></script>
 </head>
 <body>
   <header class="main-header">
@@ -18,6 +19,11 @@
         </ul>
       </nav>
   </header>
+  <div class="filter-controls">
+    <input id="cat-origin" class="input" placeholder="Filter by country…" />
+    <button id="filter-btn" class="filter-btn">Filter</button>
+    <button id="reset-btn" class="filter-btn">Reset</button>
+  </div>
     <h2>Choose your next friend...</h2>
       <div id="cat-grid"></div>
   <template id="cat-template">
@@ -28,7 +34,7 @@
           <div class="info"><strong>Temperament:</strong> <span class="cat-temperament"></span></div>
           <div class="info"><strong>Child-friendly:</strong> <span class="child-friendly"></span> / 5</div>
           <div class="info"><strong>Life Span:</strong> <span class="cat-life"></span> years</div>
-          <button class="btn primary">Adopt Me</button>
+          <button class="btn-primary">Adopt Me</button>
           <div class="message"></div>
     </div>
   </template>
@@ -39,6 +45,6 @@
           <a href="https://www.instagram.com/ninelivesgreece/" target="_blank">Instagram</a>
         </p>
   </footer>
-  <script src="adopt.js"></script>
+ 
 </body>
 </html>
