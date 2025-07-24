@@ -40,6 +40,10 @@ When building this app , I focused on:
   - Renders each cat as a card cloned from an HTML `<template>` 
   - “Adopt Me” buttons persist selections in `localStorage` and send a mock POST via Beeceptor   
 
+  - **Filtering**  
+  - Provides an input field to filter the gallery by country of origin  
+  - “Filter” button applies the filter, “Reset” button clears it and restores the full list  
+
 - **Client‑Side Routing (Home)**  
   - Home uses two buttons (`#adopt` & `#contact`) wired in `script.js` to navigate between pages   
 - **Contact Form**  
@@ -65,32 +69,25 @@ When building this app , I focused on:
 
 ##  Project Structure
 
-
-├── index.html # Home page (nav buttons)
-
-|── script.js # Home button click handlers
-
-├── style.css # Global & home styles
-
-  
-
-├── about.html # About page (mission, story, sponsors) 
-
-├── about.css # About page styles
-
-
-├── adopt.html # “Adopt a Cat” page (gallery + template) 
-
-├── adopt.css # Gallery page styles
-
-├── adopt.js # Fetch & render cats (setup adoption buttons) 
-
-
-├── contact.html # Contact form page 
-
-├── contact.css # Contact form styles
-
-├── contact.js # Form validation & localStorage logic 
+├── Home
+│   -- index.html
+│   -- style.css
+│   -- script.js        
+│
+├── Adopt
+│   -- adopt.html
+│   -- adopt.css
+│   -- adopt.js
+|   -- filter.js
+|
+├── About
+│   -- about.html
+│   -- about.css
+│       
+├── Contact
+│   -- contact.html
+│   -- contact.css
+│   -- contact.js     
 
 
 ##  Installation & Run
@@ -99,9 +96,6 @@ When building this app , I focused on:
    ```bash
    git clone git@github.com:mariosmorfo/QuadraWeb-project.git
    cd QuadraWeb-project
-
-   **Python**
-   python -m http.server 8000
 
    **VS Code Live Server**
    Install the Live Server extension by Ritwick Dey.
