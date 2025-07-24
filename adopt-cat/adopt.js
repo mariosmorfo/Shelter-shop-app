@@ -1,0 +1,124 @@
+/**
+ * @features
+ * - **Template-Based Rendering**: Uses an HTML <template> to define a reusable card layout.
+ * - **Asynchronous API Fetching**: Retrieves cat breed data from TheCatAPI using fetch and async/await.
+ * - **Dynamic DOM Insertion**: Populates each card with cat image, name, origin, temperament, and life span.
+ * - **User Interaction**: Each card includes an "Adopt Me" button that sends a mock adoption request (POST).
+ * - **Local Storage**: Saves adopted cat data in the browser's localStorage to persist user actions across sessions.
+ * - **Feedback Messaging**: Displays success or error messages in response to user actions.
+ * - **Errors**: Handles data fetch failures gracefully with console logging and user-visible messages.
+ * - **Filtering Functionality**: Filters cat breeds based on user input for country of origin.
+ * 
+ * @technologies
+ * - JavaScript (ES6+)
+ * - REST API (TheCatAPI, Beecceptor)
+ */
+
+import { filterCats } from './filter.js'; 
+
+const apiUrl = 'https://api.thecatapi.com/v1/breeds';
+const imageBase = 'https://cdn2.thecatapi.com/images';
+const grid = document.getElementById('cat-grid');
+const template = document.getElementById('cat-template');
+const postUrl = 'https://echo.free.beeceptor.com/api/adopt';
+const originInput = document.getElementById('cat-origin');
+const filterBtn   = document.getElementById('filter-btn');
+const resetBtn    = document.getElementById('reset-btn');
+
+let allCats = [];
+  
+document.addEventListener('DOMContentLoaded', onInit);
+
+async function onInit() {
+  try {
+    allCats = await fetchCatData();
+    renderCats(allCats);
+  } catch (err) {
+    console.error('Failed to load cats', err);
+    grid.innerHTML = '<p>Error loading cats.</p>';
+  }
+
+  filterBtn.addEventListener('click', () => {
+  const query = originInput.value.trim();
+  
+  if (!query) {
+    alert('Please enter a country to filter by.');
+    return;      
+  }
+
+  const filtered = filterCats(allCats, query);
+  renderCats(filtered);
+});
+
+  resetBtn.addEventListener('click', () => {
+    originInput.value = '';      
+    renderCats(allCats);                
+  });
+}
+
+async function fetchCatData() {
+  const res = await fetch(apiUrl);
+  return await res.json();
+}
+
+function renderCats(cats) {
+  grid.innerHTML = '';
+  cats.forEach(cat => {
+    const card = createCatCard(cat);
+    grid.appendChild(card);
+  });
+}
+
+function createCatCard(cat) {
+  const card = template.content.cloneNode(true);
+
+  const img = card.querySelector('.cat-img');
+  img.src = cat.reference_image_id
+    ? `${imageBase}/${cat.reference_image_id}.jpg`
+    : '../img/cat1.jpg';
+  img.onerror = () => (img.src = '../img/cat1.jpg');
+  img.alt = cat.name;
+
+  card.querySelector('.cat-name').textContent = cat.name;
+  card.querySelector('.cat-origin').textContent = cat.origin;
+  card.querySelector('.cat-temperament').textContent = cat.temperament;
+  card.querySelector('.cat-life').textContent = cat.life_span;
+
+  const button = card.querySelector('button');
+  const message = card.querySelector('.message');
+  setupAdoptButton(button, message, cat);
+
+  return card;
+}
+
+function setupAdoptButton(button, message, cat) {
+  button.addEventListener('click', () => {
+    const adoptedCat = {
+      name: cat.name,
+      origin: cat.origin,
+      temperament: cat.temperament,
+      life_span: cat.life_span,
+    };
+
+    const adopted = JSON.parse(localStorage.getItem('adoptedCats')) || [];
+    adopted.push(adoptedCat);
+    localStorage.setItem('adoptedCats', JSON.stringify(adopted));
+
+    fetch(postUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(adoptedCat)
+    })
+      .then(() => {
+        message.textContent = 'Adoption request sent!';
+        button.disabled = true;
+      })
+      .catch(() => {
+        message.textContent = 'Something went wrong.';
+      });
+  });
+
+}
+
+
+
