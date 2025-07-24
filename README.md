@@ -70,23 +70,36 @@ When building this app , I focused on:
 ##  Project Structure
 
 ├── Home
+
 │   -- index.html
+
 │   -- style.css
+
 │   -- script.js        
 │
 ├── Adopt
+
 │   -- adopt.html
+
 │   -- adopt.css
+
 │   -- adopt.js
+
 |   -- filter.js
 |
 ├── About
+
 │   -- about.html
+
 │   -- about.css
+
 │       
 ├── Contact
+
 │   -- contact.html
+
 │   -- contact.css
+
 │   -- contact.js     
 
 
