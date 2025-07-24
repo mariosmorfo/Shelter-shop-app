@@ -71,36 +71,38 @@ When building this app , I focused on:
 
 ├── Home
 
-│   -- index.html
+   -- index.html
 
-│   -- style.css
+   -- style.css
 
-│   -- script.js        
-│
+   -- script.js        
+
+
 ├── Adopt
 
-│   -- adopt.html
+   -- adopt.html
 
-│   -- adopt.css
+   -- adopt.css
 
-│   -- adopt.js
+   -- adopt.js
 
-|   -- filter.js
-|
+   -- filter.js
+
+
 ├── About
 
-│   -- about.html
+   -- about.html
 
-│   -- about.css
+   -- about.css
 
-│       
+       
 ├── Contact
 
-│   -- contact.html
+   -- contact.html
 
-│   -- contact.css
+   -- contact.css
 
-│   -- contact.js     
+   -- contact.js     
 
 
 ##  Installation & Run
